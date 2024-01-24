@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="vender/bootstrap/css/bootstrap.min.css">
+    <!-- Remix Icons -->
+    <link rel="stylesheet" href="vender/remixicon/remixicon.css">
+    <!-- Sidebar Css -->
+    <link rel="stylesheet" href="css/sidebar.css">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="sb-nav-fixed">
+
+    <nav class="sb-topnav navbar navbar-expand bg-light">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">
+            <img src="img/logo.png" alt="logo" class="img-fluid w-75">
+        </a>
+        <!-- Sidebar Toggle-->
+        <a class="btn btn-light bg-white order-1 order-lg-0 d-lg-none me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="ri-menu-line"></i></a>
+        <div class="ms-0 ms-md-4 m-none">
+            <!-- location -->
+            <a href="#" class="link-dark fw-semibold" data-bs-toggle="modal" data-bs-target="#location"><i
+                    class="ri-map-pin-2-line text-primary me-2"></i>Select Location<i
+                    class="ri-expand-up-down-line ms-1"></i></a>
+        </div>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-4 my-2 my-md-0">
+            <div class="input-group bg-white rounded">
+                <span class="input-group-text bg-transparent border-0 rounded-0" id="search"><i
+                        class="ri-search-line"></i></span>
+                <input type="text" class="form-control bg-transparent border-0 rounded-0 ps-0" placeholder="Search"
+                    aria-describedby="search">
+            </div>
+        </form>
+        <!-- Navbar-->
+        <div class="d-flex align-items-center gap-3 ms-auto ms-md-0 me-3 me-lg-4">
+            <a class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#filter" aria-controls="filter"><i
+          class="ri-filter-3-line text-white"></i></a>
+            <a class="btn btn-danger" data-bs-toggle="offcanvas" data-bs-target="#cart" aria-controls="cart"><i
+          class="ri-shopping-cart-line text-white"></i></a>
+        </div>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark bg-light" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="ri-home-5-line ri-lg"></i></div>
+                            Home
+                        </a>
+                        <a class="nav-link" href="explore.html">
+                            <div class="sb-nav-link-icon"><i class="ri-layout-masonry-line ri-lg"></i></div>
+                            Explore
+                        </a>
+                        <a class="nav-link" href="favourites.html">
+                            <div class="sb-nav-link-icon"><i class="ri-heart-line ri-lg"></i></div>
+                            Favourites
+                        </a>
+                        <a class="nav-link" href="orders.html">
+                            <div class="sb-nav-link-icon"><i class="ri-list-unordered ri-lg"></i></div>
+                            Orders
+                        </a>
+                        <a class="nav-link" href="messages.html">
+                            <div class="sb-nav-link-icon"><i class="ri-message-2-line ri-lg"></i></div>
+                            Message
+                            <div class="sb-sidenav-collapse-arrow">
+                                <div class="bg-primary rounded-circle p-1"></div>
+                            </div>
+                        </a>
+                        <a class="nav-link" href="settings.html">
+                            <div class="sb-nav-link-icon"><i class="ri-settings-3-line ri-lg"></i></div>
+                            Settings
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Pages</div>
+                        <a class="nav-link collapsed active" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon">
+                                <i class="ri-pages-fill ri-lg"></i>
+                            </div>
+                            Pages
+                            <div class="sb-sidenav-collapse-arrow">
+                                <i class="ri-arrow-down-s-line ri-lg"></i>
+                            </div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="sign-in.html">Sign in</a>
+                                <a class="nav-link" href="sign-up.html">Sign up</a>
+                                <a class="nav-link" href="forget-password.html">Forget Password</a>
+                                <a class="nav-link active" href="restaurant.html">Restaurant</a>
+                                <a class="nav-link" href="category.html">Category</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer shadow-sm border-top border-light-subtle p-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="img/profile.jpg" alt="profile" class="img-fluid rounded-circle profile-img">
+                        <div>
+                            <h6 class="fw-bold mb-0">Mr Singh</h6>
+                            <p class="text-secondary-emphasis small mb-0">singh@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid p-4">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="restaurant-header rounded-4">
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="bg-light rounded-4 border border-5 border-white brand-logo mx-auto mt-n9 mb-4">
+                                <img src="img/brands-logo/logo-1.png" alt="burger-king" class="img-fluid">
+                            </div>
+                            <div>
+                                <div class="d-block d-md-flex align-items-center justify-content-between mb-2">
+                                    <h2 class="fw-bold mb-md-0">Burger King</h2>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <span class="badge text-bg-primary rounded-1 p-2">Free delivery</span>
+                                        <span class="badge text-bg-orange rounded-1 p-2">Buy 2 get 1 free</span>
+                                        <span class="badge text-bg-success rounded-1 p-2">Opens at 12 PM</span>
+                                    </div>
+                                </div>
+                                <p class="text-secondary-emphasis">It is one of the most iconinc and well-recognizable
+                                    fast food restaurants out ther which offers really amazing food and drinks</p>
+                                <div class="d-block d-md-flex flex-fill align-items-center gap-4">
+                                    <p class="mb-0"><i class="ri-star-fill text-warning me-2"></i>4.8 <span
+                                            class="text-secondary-emphasis">(2,765)</span></p>
+                                    <p class="text-secondary-emphasis mb-0"><i
+                                            class="ri-restaurant-line me-2"></i>Burger</p>
+                                    <p class="text-secondary-emphasis mb-0"><i
+                                            class="ri-money-dollar-box-line me-2"></i>Cash on delivery</p>
+                                    <p class="text-secondary-emphasis mb-0">4,4 km (Irving St, San Francisco,
+                                        California)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="restaurant-tabs mb-3">
+                                <ul class="nav nav-pills gap-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill"
+                                            data-bs-target="#pills-popular" type="button" role="tab"
+                                            aria-controls="pills-popular" aria-selected="true">Popular</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-burgers-tab" data-bs-toggle="pill"
+                                            data-bs-target="#pills-burgers" type="button" role="tab"
+                                            aria-controls="pills-burgers" aria-selected="false">Burgers</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-fries-tab" data-bs-toggle="pill"
+                                            data-bs-target="#pills-fries" type="button" role="tab"
+                                            aria-controls="pills-fries" aria-selected="false">Fries</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-drinks-tab" data-bs-toggle="pill"
+                                            data-bs-target="#pills-drinks" type="button" role="tab"
+                                            aria-controls="pills-drinks" aria-selected="false">Drinks</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-wraps-tab" data-bs-toggle="pill"
+                                            data-bs-target="#pills-wraps" type="button" role="tab"
+                                            aria-controls="pills-wraps" aria-selected="false">Wraps</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel"
+                                    aria-labelledby="pills-popular-tab" tabindex="0">
+                                    <div class="row g-4">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-1.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Gigantic Rodeo Burger</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$0.99
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.3</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Burger</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-2.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Cheeze Pizza</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$2.50
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.3</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Burger</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-3.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Penne pasta in tomato</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$0.99
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.3</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Burger</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-4.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Chicken biryani</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">Free
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.3</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Burger</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-5.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Chicken skewers</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$1.00
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.3</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Burger</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-6.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Fresh nudels</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">Free
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.3</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Burger</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-7.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Sandwich with french fries
+                                                        </h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$ 0.5
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.3</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Sandwich</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-8.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Fried spring rolls</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">Free
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">3.5</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Fries</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-9.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Chocolate cupcakes</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">Free
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.8</span>
+                                                            <span>(3,573)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Cakes</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>20 - 25 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-10.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Tasty vegetables grilled
+                                                        </h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">Free
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.2</span>
+                                                            <span>(2,573)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Veg</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>10 - 15 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-11.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Moong dal vada with saus
+                                                        </h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">Free
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.8</span>
+                                                            <span>(4,673)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Fries</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>20 - 25 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/dishes/dish-12.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Chicken pizza with bell</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">Free
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">5.0</span>
+                                                            <span>(5,573)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Pizza</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>25 - 30 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Burger tabs -->
+                                <div class="tab-pane fade" id="pills-burgers" role="tabpanel"
+                                    aria-labelledby="pills-burgers-tab" tabindex="0">
+                                    <div class="row g-4">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/burgers/burger-1.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Gigantic Rodeo Burger</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$0.99
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.3</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Burger</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/burgers/burger-2.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Grilled hamburger with
+                                                            cheese</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">Free
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">3.5</span>
+                                                            <span>(3,573)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Burger</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>20 - 30 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/burgers/burger-3.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Meat burger with cheese</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$1.50
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.0</span>
+                                                            <span>(2,673)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Burger</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>10 - 15 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fries tab -->
+                                <div class="tab-pane fade" id="pills-fries" role="tabpanel"
+                                    aria-labelledby="pills-fries-tab" tabindex="0">
+                                    <div class="row g-4">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/fries/fries-1.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Crispy french fries</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">Free
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.5</span>
+                                                            <span>(4,973)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Fries</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/fries/fries-2.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">goldy chicken nuggets</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$1.00
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">3.8</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Fries</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>20 - 30 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/fries/fries-3.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">French fries with ketchup
+                                                        </h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$0.99
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.8</span>
+                                                            <span>(5,773)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Fries</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>20 - 25 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Drinks tab -->
+                                <div class="tab-pane fade" id="pills-drinks" role="tabpanel"
+                                    aria-labelledby="pills-drinks-tab" tabindex="0">
+                                    <div class="row g-4">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/drinks/drink-1.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">lemonade drink, ice</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$0.99
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.5</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Drinks</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/drinks/drink-2.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Ice tea with mint</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$free
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">3.5</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Drinks</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>10 - 15 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/drinks/drink-3.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Orange juice</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$1.50
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.0</span>
+                                                            <span>(1,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Drinks</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>20 - 25 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- wraps tab -->
+                                <div class="tab-pane fade" id="pills-wraps" role="tabpanel"
+                                    aria-labelledby="pills-wraps-tab" tabindex="0">
+                                    <div class="row g-4">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/wraps/wrap-1.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Chicken roll grilled</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$0.99
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.0</span>
+                                                            <span>(3,673)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Wraps</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>20 - 30 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/wraps/wrap-2.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Tortilla wrap with falafel
+                                                        </h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$1.00
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.3</span>
+                                                            <span>(5,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Wraps</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>10 - 20 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                                            <div class="card bg-transparent border-0 rounded-0">
+                                                <img src="img/wraps/wrap-3.jpg" class="card-img-top rounded-4"
+                                                    alt="popular-food">
+                                                <div class="card-body px-0">
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <h5 class="card-title fw-bold mb-0">Sandwich rolls sliced</h5>
+                                                        <span class="badge text-bg-primary rounded-1 small-sm p-2">$0.99
+                                                            delivery</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex align-items-center gap-3 text-secondary-emphasis">
+                                                        <small><i class="ri-star-fill text-warning me-1"></i><span
+                                                                class="text-dark fw-bold">4.5</span>
+                                                            <span>(3,873)</span></small>
+                                                        <small><i class="ri-restaurant-fill me-1"></i>Wraps</small>
+                                                        <small><i class="ri-takeaway-fill me-1"></i>30 - 40 min</small>
+                                                    </div>
+                                                    <a href="#" class="stretched-link" data-bs-toggle="modal"
+                                                        data-bs-target="#productpreview"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2024</div>
+                        <div>
+                            <a href="#" class="link-primary">Privacy Policy</a>
+                            &middot;
+                            <a href="#" class="link-primary">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Product preview modal -->
+    <div class="modal fade" id="productpreview" tabindex="-1" aria-labelledby="productpreviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 overflow-hidden p-2">
+                <div class="modal-header d-none">
+                    <h5 class="modal-title fw-bold mb-0" id="productpreviewLabel">
+                        Modal title
+                    </h5>
+                    <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i
+                            class="ri-close-fill"></i></a>
+                </div>
+                <div class="modal-body">
+                    <img src="img/dishes/dish-2.jpg" alt="product-preview" class="img-fluid rounded-3" />
+                    <div class="pt-3">
+                        <p class="fw-bold mb-2">
+                            <i class="ri-star-fill text-warning me-2"></i>4.8
+                        </p>
+                        <h5 class="fw-bold">Cheeza Pizza</h5>
+                        <p class="text-secondary-emphasis mb-0">
+                            A scrumptious pizza with an irresistible topping of roasted
+                            vegetables, and melted cheese layered over a perfectly baked
+                            pizza base.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <div class="d-flex align-items-center gap-3 w-100">
+                        <div class="d-flex align-items-center gap-1 border rounded-3 p-2 w-30 quantity-wrapper">
+                            <a class="btn btn-light minus">-</a>
+                            <input class="form-control border-0 rounded-0 text-center p-0 quantity" type="text"
+                                value="1" min="1" />
+                            <a class="btn btn-light plus">+</a>
+                        </div>
+                        <a class="btn btn-primary btn-lg w-70" id="liveToastBtn">Add Item</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add item toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast bg-success-subtle border-2 border-success" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="toast-body d-flex align-items-center justify-content-between text-success">
+                Your Item has been added
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- location Modal -->
+    <div class="modal fade" id="location" tabindex="-1" aria-labelledby="locationLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold mb-0" id="locationLabel">Location</h5>
+                    <a href="#" class="link-dark" data-bs-dismiss="modal" aria-label="Close"><i
+                            class="ri-close-fill ri-xl"></i></a>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9 rounded-4 overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.1269465912023!2d-0.1419615234658009!3d51.492537871809965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876056e7ae885d1%3A0xde4f20d34f011e36!2sDomino&#39;s%20Pizza%20-%20London%20-%20Victoria!5e0!3m2!1sen!2sin!4v1687005034446!5m2!1sen!2sin"
+                            class="border-0" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-primary btn-lg w-100" data-bs-dismiss="modal">Auto
+                        Select</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Filter offcanvas -->
+  <div class="offcanvas offcanvas-end border-light-subtle" tabindex="-1" id="filter" aria-labelledby="filterLabel">
+    <div class="offcanvas-header border-bottom border-light-subtle">
+      <h5 class="offcanvas-title fw-bold mb-0" id="filterLabel">
+        Search filters
+      </h5>
+      <a href="#" class="btn btn-light" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ri-close-fill"></i></a>
+    </div>
+    <div class="offcanvas-body">
+      <!-- sort by -->
+      <div class="mb-5">
+        <h5 class="fw-bold pb-2">Sort by</h5>
+        <div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+            <label class="form-check-label" for="flexRadioDefault1">
+              Most popular
+            </label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+            <label class="form-check-label" for="flexRadioDefault2">
+              Delivery time
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+            <label class="form-check-label" for="flexRadioDefault3">
+              Rating
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- Price range -->
+      <div class="mb-5">
+        <h5 class="fw-bold pb-2">Price range</h5>
+        <div>
+          <input type="range" class="form-range" min="0" max="5" id="pricerange" />
+          <div class="d-flex align-items-center justify-content-between">
+            <p class="small text-seocndary-emphasis mb-0">$50</p>
+            <p class="small text-seocndary-emphasis mb-0">$100</p>
+            <p class="small text-seocndary-emphasis mb-0">$200</p>
+            <p class="small text-seocndary-emphasis mb-0">$300</p>
+            <p class="small text-seocndary-emphasis mb-0">$400</p>
+            <p class="small text-seocndary-emphasis mb-0">$500</p>
+          </div>
+        </div>
+      </div>
+      <!-- category -->
+      <div class="mb-4">
+        <h5 class="fw-bold pb-2">Category</h5>
+        <div class="d-flex flex-wrap align-items-start gap-3">
+          <div>
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" checked />
+            <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck1">Burger</label>
+          </div>
+          <div>
+            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" />
+            <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck2">Drinks</label>
+          </div>
+          <div>
+            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" />
+            <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck3">Fries</label>
+          </div>
+          <div>
+            <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" />
+            <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck4">Wraps</label>
+          </div>
+          <div>
+            <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" checked />
+            <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck5">Pizza</label>
+          </div>
+          <div>
+            <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" checked />
+            <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck6">Fries</label>
+          </div>
+          <div>
+            <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" />
+            <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck7">Ice cream</label>
+          </div>
+          <div>
+            <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off" />
+            <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck8">Desert</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- my cart offcanvas -->
+   <div class="offcanvas offcanvas-end border-light-subtle" tabindex="-1" id="cart" aria-labelledby="cartLabel">
+    <div class="offcanvas-header border-bottom border-light-subtle">
+      <h5 class="offcanvas-title fw-bold mb-0" id="cartLabel">
+        My cart
+        <span class="text-secondary-emphasis fw-normal fs-6">(2 items)</span>
+      </h5>
+      <a href="#" class="btn btn-light" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ri-close-fill"></i></a>
+    </div>
+    <div class="offcanvas-body">
+      <a href="#" class="link-dark" data-bs-toggle="modal" data-bs-target="#delivery-address">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <div>
+            <p class="text-uppercase text-orange small-sm mb-0">
+              Delivered To
+            </p>
+            <p class="text-dark fw-bold mb-0">
+              31 Narrow Lane, 2813 United States
+            </p>
+          </div>
+          <i class="ri-arrow-right-s-line ri-lg"></i>
+        </div>
+      </a>
+      <div class="mb-5">
+        <h5 class="fw-bold pb-2">Items</h5>
+        <div class="row align-items-center g-4 mb-3">
+          <div class="col-4">
+            <img src="img/dishes/dish-2.jpg" alt="cart-item" class="img-fluid rounded-3" />
+          </div>
+          <div class="col-1">
+            <p class="text-secondary-emphasis small-sm mb-0">1X</p>
+          </div>
+          <div class="col-5">
+            <h6 class="fw-bold mb-1">Cheeza Pizza</h6>
+            <p class="text-secondary-emphasis mb-0">$20</p>
+          </div>
+          <div class="col-2 text-end">
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"><i
+                class="ri-delete-bin-5-line"></i></a>
+          </div>
+        </div>
+        <div class="row align-items-center g-4 mb-3">
+          <div class="col-4">
+            <img src="img/dishes/dish-12.jpg" alt="cart-item" class="img-fluid rounded-3" />
+          </div>
+          <div class="col-1">
+            <p class="text-secondary-emphasis small-sm mb-0">1X</p>
+          </div>
+          <div class="col-5">
+            <h6 class="fw-bold mb-1">Pepperoni Pizza</h6>
+            <p class="text-secondary-emphasis mb-0">$25</p>
+          </div>
+          <div class="col-2 text-end">
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"><i
+                class="ri-delete-bin-5-line"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- delivery and promo code -->
+      <div>
+        <div class="row align-items-center mb-4">
+          <div class="col-4">
+            <div class="bg-warning-subtle rounded-3 d-flex align-items-center justify-content-center p-3">
+              <i class="ri-truck-fill ri-2x text-warning"></i>
+            </div>
+          </div>
+          <div class="col-5">
+            <h6 class="fw-bold mb-1">Delivery Fee</h6>
+            <p class="text-secondary-emphasis mb-0">Free</p>
+          </div>
+        </div>
+        <div class="row align-items-center mb-4">
+          <div class="col-4">
+            <div class="bg-light rounded-3 d-flex align-items-center justify-content-center p-3">
+              <i class="ri-coupon-2-fill ri-2x text-dark"></i>
+            </div>
+          </div>
+          <div class="col-5">
+            <h6 class="fw-bold mb-1">Promo code</h6>
+            <p class="text-secondary-emphasis mb-0">FGRW82</p>
+          </div>
+          <div class="col-3 text-end">
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#promocode"><i
+                class="ri-add-fill"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas-footer">
+      <a href="#" class="btn btn-primary btn-lg w-100" data-bs-toggle="offcanvas" data-bs-target="#checkout"
+        aria-controls="checkout">Checkout <span class="text-white-50 small">($40.00)</span></a>
+    </div>
+  </div>
+
+  <!-- checkout step 2 -->
+  <div class="offcanvas offcanvas-end border-light-subtle" tabindex="-1" id="checkout" aria-labelledby="checkoutLabel">
+    <div class="offcanvas-header border-bottom border-light-subtle">
+      <div class="d-flex align-items-center gap-2">
+        <a href="#" class="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#cart" aria-controls="cart"><i
+            class="ri-arrow-left-s-line"></i></a>
+        <h5 class="offcanvas-title fw-bold mb-0" id="checkoutLabel">Checkout</h5>
+      </div>
+      <a href="#" class="btn btn-light" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ri-close-fill"></i></a>
+    </div>
+    <div class="offcanvas-body">
+      <h5 class="fw-semibold">Payment Method</h5>
+      <div class="checkout-tabs mb-4">
+        <ul class="nav nav-pills justify-content-between gap-3" id="pills-tab" role="tablist">
+          <li class="nav-item col" role="presentation">
+            <button class="nav-link w-100 active" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+              type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+              <i class="ri-bank-card-2-line ri-2x"></i>
+            </button>
+          </li>
+          <li class="nav-item col" role="presentation">
+            <button class="nav-link w-100" id="pills-cod-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+              type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+              <i class="ri-money-dollar-box-line ri-2x"></i>
+            </button>
+          </li>
+          <li class="nav-item col" role="presentation">
+            <button class="nav-link w-100" id="pills-paypal-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+              type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+              <i class="ri-paypal-line ri-2x"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-card-tab"
+          tabindex="0">
+          <h6>My Cards (1)</h6>
+          <div class="d-flex gap-3">
+            <div class="col">
+              <a href="#" class="link-dark">
+                <div class="bg-light rounded-4 d-flex align-items-center justify-content-center h-100">
+                  <div><i class="ri-add-fill ri-3x"></i></div>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <img src="img/visa-card.webp" alt="my-card" class="img-fluid">
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-cod-tab" tabindex="0">
+          <div class="text-center mb-4">
+            <i class="ri-service-line text-success ri-10x"></i>
+            <h4 class="fw-bold">Pay when your product reached in your door steps</h4>
+          </div>
+          <a href="#" class="btn btn-primary btn-lg w-100" data-bs-dismiss="offcanvas" aria-label="Close">Cash on delivery</a>
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-paypal-tab" tabindex="0">
+          <div class="bg-light rounded-4 p-3">
+            <img src="img/paypal-code.png" alt="paypal" class="img-fluid rounded-4 shadow-sm">
+          </div>
+          <h4 class="text-center fw-bold pt-3">Scan to pay</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Item delete modal -->
+  <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content border-0 rounded-4 p-2">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold mb-0" id="delivery-addressLabel">
+            Delete
+          </h5>
+          <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <i class="ri-delete-bin-5-line ri-3x text-danger"></i>
+            <h5>Are you sure you want to delete this item?</h5>
+          </div>
+        </div>
+        <div class="modal-footer border-0 d-flex gap-2">
+          <button type="button" class="btn btn-secondary col" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger col" data-bs-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- delivery address modal -->
+  <div class="modal fade" id="delivery-address" tabindex="-1" aria-labelledby="delivery-addressLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 p-2">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold mb-0" id="delivery-addressLabel">
+            Delivery address
+          </h5>
+          <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3">
+            <div class="col-12">
+              <label for="InputStreet1" class="form-label form-label-sm text-uppercase small-sm fw-bold mb-0">Street
+                Name</label>
+              <input type="text"
+                class="form-control form-control-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                id="InputStreet1" value="31 Narrow Lane, 2813 United States" />
+            </div>
+            <div class="col-12">
+              <label for="InputCity2" class="form-label form-label-sm text-uppercase small-sm fw-bold mb-0">City</label>
+              <select class="form-select form-select-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                id="InputCity2">
+                <option selected>San Antonio</option>
+                <option value="1">Los Angeles</option>
+                <option value="2">Philadelphia</option>
+                <option value="3">Chicago</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="InputCity2"
+                class="form-label form-label-sm text-uppercase small-sm fw-bold mb-0">State</label>
+              <select class="form-select form-select-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                id="InputCity2">
+                <option selected>South Carolina</option>
+                <option value="1">Texas</option>
+                <option value="2">Hawai</option>
+                <option value="3">New jersey</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="InputZipcode4" class="form-label form-label-sm text-uppercase small-sm fw-bold mb-0">Zip
+                code</label>
+              <input type="number"
+                class="form-control form-control-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                id="InputZipcode4" value="48681" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-0">
+          <a class="btn btn-primary btn-lg w-100" data-bs-dismiss="modal">Confirm</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- promo code modal -->
+  <div class="modal fade" id="promocode" tabindex="-1" aria-labelledby="promocodeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content border-0 rounded-4 p-2">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold mb-0" id="promocodeLabel">
+            Enter promo code
+          </h5>
+          <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+        </div>
+        <div class="modal-body py-1">
+          <input class="form-control bg-light border-0 rounded text-center py-2" type="text" value="FGRW82" />
+        </div>
+        <div class="modal-footer border-0">
+          <a class="btn btn-primary py-2 w-100" data-bs-dismiss="modal">Confirm</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Bootstrap Bundle Js -->
+    <script src="vender/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

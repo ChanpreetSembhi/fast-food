@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="vender/bootstrap/css/bootstrap.min.css">
+    <!-- Remix Icons -->
+    <link rel="stylesheet" href="vender/remixicon/remixicon.css">
+    <!-- Sidebar Css -->
+    <link rel="stylesheet" href="css/sidebar.css">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="sb-nav-fixed">
+
+    <nav class="sb-topnav navbar navbar-expand bg-light">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">
+            <img src="img/logo.png" alt="logo" class="img-fluid w-75">
+        </a>
+        <!-- Sidebar Toggle-->
+        <a class="btn btn-light bg-white order-1 order-lg-0 d-lg-none me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="ri-menu-line"></i></a>
+        <div class="ms-0 ms-md-4 m-none">
+            <!-- location -->
+            <a href="#" class="link-dark fw-semibold" data-bs-toggle="modal" data-bs-target="#location"><i
+                    class="ri-map-pin-2-line text-primary me-2"></i>Select Location<i
+                    class="ri-expand-up-down-line ms-1"></i></a>
+        </div>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-4 my-2 my-md-0">
+            <div class="input-group bg-white rounded">
+                <span class="input-group-text bg-transparent border-0 rounded-0" id="search"><i
+                        class="ri-search-line"></i></span>
+                <input type="text" class="form-control bg-transparent border-0 rounded-0 ps-0" placeholder="Search"
+                    aria-describedby="search">
+            </div>
+        </form>
+        <!-- Navbar-->
+        <div class="d-flex align-items-center gap-3 ms-auto ms-md-0 me-3 me-lg-4">
+            <a class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#filter" aria-controls="filter"><i
+          class="ri-filter-3-line text-white"></i></a>
+            <a class="btn btn-danger" data-bs-toggle="offcanvas" data-bs-target="#cart" aria-controls="cart"><i
+          class="ri-shopping-cart-line text-white"></i></a>
+        </div>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark bg-light" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="ri-home-5-line ri-lg"></i></div>
+                            Home
+                        </a>
+                        <a class="nav-link" href="explore.html">
+                            <div class="sb-nav-link-icon"><i class="ri-layout-masonry-line ri-lg"></i></div>
+                            Explore
+                        </a>
+                        <a class="nav-link" href="favourites.html">
+                            <div class="sb-nav-link-icon"><i class="ri-heart-line ri-lg"></i></div>
+                            Favourites
+                        </a>
+                        <a class="nav-link" href="orders.html">
+                            <div class="sb-nav-link-icon"><i class="ri-list-unordered ri-lg"></i></div>
+                            Orders
+                        </a>
+                        <a class="nav-link" href="messages.html">
+                            <div class="sb-nav-link-icon"><i class="ri-message-2-line ri-lg"></i></div>
+                            Message
+                            <div class="sb-sidenav-collapse-arrow">
+                                <div class="bg-primary rounded-circle p-1"></div>
+                            </div>
+                        </a>
+                        <a class="nav-link active" href="settings.html">
+                            <div class="sb-nav-link-icon"><i class="ri-settings-3-fill ri-lg"></i></div>
+                            Settings
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Pages</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon">
+                                <i class="ri-pages-line ri-lg"></i>
+                            </div>
+                            Pages
+                            <div class="sb-sidenav-collapse-arrow">
+                                <i class="ri-arrow-down-s-line ri-lg"></i>
+                            </div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="sign-in.html">Sign in</a>
+                                <a class="nav-link" href="sign-up.html">Sign up</a>
+                                <a class="nav-link" href="forget-password.html">Forget Password</a>
+                                <a class="nav-link" href="restaurant.html">Restaurant</a>
+                                <a class="nav-link" href="category.html">Category</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer shadow-sm border-top border-light-subtle p-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="img/profile.jpg" alt="profile" class="img-fluid rounded-circle profile-img">
+                        <div>
+                            <h6 class="fw-bold mb-0">Mr Singh</h6>
+                            <p class="text-secondary-emphasis small mb-0">singh@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid p-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="fw-bold pb-3">Settings</h4>
+                            <!-- Gernal -->
+                            <div class="mb-5">
+                                <p class="text-secondary-emphasis">General</p>
+                                <a href="#" class="link-dark" data-bs-toggle="modal"
+                                    data-bs-target="#personalinformation">
+                                    <div class="d-flex align-items-center gap-3 border-bottom py-4">
+                                        <i class="ri-user-line ri-xl text-primary"></i>
+                                        <h6 class="fw-bold mb-0">Personal information</h6>
+                                        <div class="ms-auto"><i class="ri-arrow-right-s-line ri-lg"></i></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="link-dark" data-bs-toggle="modal" data-bs-target="#address">
+                                    <div class="d-flex align-items-center gap-3 border-bottom py-4">
+                                        <i class="ri-bookmark-line ri-xl text-orange"></i>
+                                        <h6 class="fw-bold mb-0">Saved addresses</h6>
+                                        <div class="ms-auto"><i class="ri-arrow-right-s-line ri-lg"></i></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="link-dark" data-bs-toggle="modal"
+                                    data-bs-target="#marketingpreference">
+                                    <div class="d-flex align-items-center gap-3 border-bottom py-4">
+                                        <i class="ri-mail-line ri-xl text-warning"></i>
+                                        <h6 class="fw-bold mb-0">Marketing preferences</h6>
+                                        <div class="ms-auto"><i class="ri-arrow-right-s-line ri-lg"></i></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- payments -->
+                            <div class="mb-5">
+                                <p class="text-secondary-emphasis">Payments</p>
+                                <a href="#" class="link-dark" data-bs-toggle="modal" data-bs-target="#paymentmethod">
+                                    <div class="d-flex align-items-center gap-3 border-bottom py-4">
+                                        <i class="ri-wallet-3-line ri-xl text-primary"></i>
+                                        <h6 class="fw-bold mb-0">Payment method</h6>
+                                        <div class="ms-auto"><i class="ri-arrow-right-s-line ri-lg"></i></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="link-dark" data-bs-toggle="modal" data-bs-target="#mycards">
+                                    <div class="d-flex align-items-center gap-3 border-bottom py-4">
+                                        <i class="ri-bank-card-2-line ri-xl text-orange"></i>
+                                        <h6 class="fw-bold mb-0">My cards</h6>
+                                        <div class="ms-auto"><i class="ri-arrow-right-s-line ri-lg"></i></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- other -->
+                            <div>
+                                <p class="text-secondary-emphasis">Other</p>
+                                <a href="#" class="link-dark" data-bs-toggle="modal" data-bs-target="#support">
+                                    <div class="d-flex align-items-center gap-3 border-bottom py-4">
+                                        <i class="ri-question-line ri-xl text-primary"></i>
+                                        <h6 class="fw-bold mb-0">Support</h6>
+                                        <div class="ms-auto"><i class="ri-arrow-right-s-line ri-lg"></i></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="link-dark" data-bs-toggle="modal" data-bs-target="#invitefriend">
+                                    <div class="d-flex align-items-center gap-3 border-bottom py-4">
+                                        <i class="ri-user-add-line ri-xl text-orange"></i>
+                                        <h6 class="fw-bold mb-0">Invite a friend</h6>
+                                        <div class="ms-auto"><i class="ri-arrow-right-s-line ri-lg"></i></div>
+                                    </div>
+                                </a>
+                                <a href="#" class="link-dark" data-bs-toggle="modal" data-bs-target="#discount">
+                                    <div class="d-flex align-items-center gap-3 border-bottom py-4">
+                                        <i class="ri-money-dollar-box-line ri-xl text-warning"></i>
+                                        <h6 class="fw-bold mb-0">Discounts</h6>
+                                        <div class="ms-auto"><i class="ri-arrow-right-s-line ri-lg"></i></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2024</div>
+                        <div>
+                            <a href="#" class="link-primary">Privacy Policy</a>
+                            &middot;
+                            <a href="#" class="link-primary">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Personal information modal -->
+    <div class="modal fade" id="personalinformation" tabindex="-1" aria-labelledby="personalinformationLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-3">
+                <div class="modal-header align-items-center border-0">
+                    <h5 class="modal-title fw-bold mb-0" id="personalinformationLabel">Personal information</h5>
+                    <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+                </div>
+                <div class="modal-body py-0">
+                    <!-- profile img -->
+                    <div class="mb-5">
+                        <p class="text-secondary-emphasis">Profile image</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="img/profile.jpg" alt="profile"
+                                class="img-fluid rounded-circle update-profile-img">
+                            <a href="#" class="btn btn-primary px-4">Upload</a>
+                            <a href="#" class="btn btn-secondary px-4">Delete</a>
+                        </div>
+                    </div>
+                    <!-- profile details -->
+                    <div>
+                        <p class="text-secondary-emphasis">Profile details</p>
+                        <form>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center gap-4">
+                                    <div class="bg-primary-subtle rounded-4 flex-shrink-0 icon"><i
+                                            class="ri-user-line ri-xl text-primary"></i></div>
+                                    <div class="w-100">
+                                        <label for="InputName1"
+                                            class="form-label form-label-sm text-uppercase small-sm fw-semibold mb-0">Full
+                                            Name</label>
+                                        <input type="text"
+                                            class="form-control form-control-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                                            id="InputName1" value="Mr Singh">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center gap-4">
+                                    <div class="bg-orange-subtle rounded-4 flex-shrink-0 icon"><i
+                                            class="ri-mail-line ri-xl text-orange"></i></div>
+                                    <div class="w-100">
+                                        <label for="InputEmail2"
+                                            class="form-label text-uppercase small-sm fw-semibold mb-0">Email
+                                            Address</label>
+                                        <input type="email"
+                                            class="form-control bg-transparent border-0 rounded-0 border-bottom px-0"
+                                            id="InputEmail2" value="singh@gmail.com">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center gap-4">
+                                    <div class="bg-warning-subtle rounded-4 flex-shrink-0 icon"><i
+                                            class="ri-lock-2-line ri-xl text-warning"></i></div>
+                                    <div class="w-100">
+                                        <label for="Inputnumber1"
+                                            class="form-label text-uppercase small-sm fw-semibold mb-0">Number</label>
+                                        <input type="number"
+                                            class="form-control bg-transparent border-0 rounded-0 border-bottom px-0"
+                                            id="Inputnumber1" value="123456789">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <a class="btn btn-primary btn-lg w-100" data-bs-dismiss="modal">Update profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Saved Address modal -->
+    <div class="modal fade" id="address" tabindex="-1" aria-labelledby="addressLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold mb-0" id="addressLabel">Saved addresses</h5>
+                    <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+                </div>
+                <div class="modal-body py-2">
+                    <div class="address-tabs mb-4">
+                        <ul class="nav nav-pills gap-3" id="pills-tab" role="tablist">
+                            <li class="nav-item col" role="presentation">
+                                <button class="nav-link w-100 active" id="pills-home-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                    aria-selected="true">Home (2)</button>
+                            </li>
+                            <li class="nav-item col" role="presentation">
+                                <button class="nav-link w-100" id="pills-work-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-work" type="button" role="tab" aria-controls="pills-work"
+                                    aria-selected="false">Work (3)</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                            aria-labelledby="pills-home-tab" tabindex="0">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="bg-primary-subtle rounded-4 flex-shrink-0 icon"><i
+                                        class="ri-home-5-line ri-xl text-primary"></i></div>
+                                <div class="w-100">
+                                    <label for="InputHomeAddress1"
+                                        class="form-label form-label-sm text-uppercase small-sm fw-semibold mb-0">Address</label>
+                                    <input type="text"
+                                        class="form-control form-control-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                                        id="InputHomeAddress1" value="31 Narrow Lane, 2813 United States">
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="bg-orange-subtle rounded-4 flex-shrink-0 icon"><i
+                                        class="ri-home-5-line ri-xl text-orange"></i></div>
+                                <div class="w-100">
+                                    <label for="InputHomeAddress2"
+                                        class="form-label form-label-sm text-uppercase small-sm fw-semibold mb-0">Address</label>
+                                    <input type="text"
+                                        class="form-control form-control-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                                        id="InputHomeAddress2" value="24 Kathryn Street, wv, 25913  United States">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-work" role="tabpanel" aria-labelledby="pills-work-tab"
+                            tabindex="0">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="bg-primary-subtle rounded-4 flex-shrink-0 icon"><i
+                                        class="ri-building-4-line ri-xl text-primary"></i></div>
+                                <div class="w-100">
+                                    <label for="InputWorkAddress1"
+                                        class="form-label form-label-sm text-uppercase small-sm fw-semibold mb-0">Address</label>
+                                    <input type="text"
+                                        class="form-control form-control-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                                        id="InputWorkAddress1"
+                                        value="1 Porter Road, Farmington,ct, 6032  United States">
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="bg-orange-subtle rounded-4 flex-shrink-0 icon"><i
+                                        class="ri-building-4-line ri-xl text-orange"></i></div>
+                                <div class="w-100">
+                                    <label for="InputWorkAddress2"
+                                        class="form-label form-label-sm text-uppercase small-sm fw-semibold mb-0">Address</label>
+                                    <input type="text"
+                                        class="form-control form-control-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                                        id="InputWorkAddress2" value="18 52nd Court, Cicero,il, 60804  United States">
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="bg-warning-subtle rounded-4 flex-shrink-0 icon"><i
+                                        class="ri-building-4-line ri-xl text-warning"></i></div>
+                                <div class="w-100">
+                                    <label for="InputWorkAddress2"
+                                        class="form-label form-label-sm text-uppercase small-sm fw-semibold mb-0">Address</label>
+                                    <input type="text"
+                                        class="form-control form-control-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                                        id="InputWorkAddress2" value="15 463th Avenue, Marvin,sd, 53251  United States">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <a class="btn btn-primary btn-lg w-100" data-bs-dismiss="modal">Save changes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marketing Preference modal -->
+    <div class="modal fade" id="marketingpreference" tabindex="-1" aria-labelledby="marketingpreferenceLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold mb-0" id="marketingpreferenceLabel">Marketing Preference</h5>
+                    <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+                </div>
+                <div class="modal-body py-2">
+                    <div class="form-check fs-6 mb-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Promotional emails
+                        </label>
+                    </div>
+                    <div class="form-check fs-6 mb-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Monthly newsletter
+                        </label>
+                    </div>
+                    <div class="form-check fs-6 mb-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Feedback collection
+                        </label>
+                    </div>
+                    <div class="form-check fs-6">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Discount & offers
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <a class="btn btn-primary btn-lg w-100" data-bs-dismiss="modal">Update preferences</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- payment method modal -->
+    <div class="modal fade" id="paymentmethod" tabindex="-1" aria-labelledby="paymentmethodLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold mb-0" id="paymentmethodLabel">Payment methods</h5>
+                    <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+                </div>
+                <div class="modal-body py-2">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"
+                                checked>
+                            <label class="btn btn-outline-primary w-100" for="btnradio1">
+                                <i class="ri-bank-card-2-line ri-2x"></i>
+                            </label>
+
+                        </div>
+                        <div class="col-6">
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                            <label class="btn btn-outline-primary w-100" for="btnradio2"><i
+                                    class="ri-money-dollar-box-line ri-2x"></i></label>
+                        </div>
+                        <div class="col-6">
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                            <label class="btn btn-outline-primary w-100" for="btnradio3"><i
+                                    class="ri-paypal-line ri-2x"></i></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <a class="btn btn-primary btn-lg w-100" data-bs-dismiss="modal">Update payment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- my cards modal -->
+    <div class="modal fade" id="mycards" tabindex="-1" aria-labelledby="mycardsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold mb-0" id="mycardsLabel">My cards <span
+                            class="text-secondary-emphasis">(1)</span></h5>
+                    <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="#" class="link-dark">
+                                <div class="bg-light rounded-4 d-flex align-items-center justify-content-center h-100">
+                                    <div><i class="ri-add-fill ri-3x"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <img src="img/visa-card.webp" alt="my-card" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Modal -->
+    <div class="modal fade" id="support" tabindex="-1" aria-labelledby="supportLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold mb-0" id="mycardsLabel">Support</h5>
+                    <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+                </div>
+                <div class="modal-body">
+                    <a href="messages.html" class="link-dark">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="bg-primary-subtle rounded-4 flex-shrink-0 icon"><i
+                                    class="ri-message-2-line ri-xl text-primary"></i></div>
+                            <div>
+                                <p class="fw-bold small-sm text-uppercase mb-1">Live chat</p>
+                                <h6 class="text-secondary-emphasis mb-0">Waiting time: <span class="fw-bold text-dark">5
+                                        min</span></h6>
+                            </div>
+                            <div class="ms-auto"><i class="ri-arrow-right-s-line ri-xl"></i></div>
+                        </div>
+                    </a>
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="bg-orange-subtle rounded-4 flex-shrink-0 icon"><i
+                                class="ri-map-pin-2-line ri-xl text-orange"></i></div>
+                        <div>
+                            <p class="fw-bold small-sm text-uppercase mb-1">Location</p>
+                            <h6 class="text-secondary-emphasis mb-0">31 Narrow Lane, 2813 United States</span></h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-warning-subtle rounded-4 flex-shrink-0 icon"><i
+                                class="ri-customer-service-2-line ri-xl text-warning"></i></div>
+                        <div>
+                            <p class="fw-bold small-sm text-uppercase mb-1">Phone number</p>
+                            <h6 class="text-secondary-emphasis mb-0">+(123) 456 789</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Invite a friend Modal -->
+    <div class="modal fade" id="invitefriend" tabindex="-1" aria-labelledby="invitefriendLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold mb-0" id="mycardsLabel">Invite a friend</h5>
+                    <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <a href="#" class="link-dark">
+                            <div class="bg-primary-subtle rounded-4 flex-shrink-0 icon"><i
+                                    class="ri-add-line ri-2x text-primary"></i></div>
+                        </a>
+                        <h6 class="fw-bold text-primary mb-0">Send an invite to a friend</h6>
+                    </div>
+                    <div>
+                        <p class="text-secondary-emphasis">Invited friends (2)</p>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <img src="img/chat-profile/profile-5.jpg" alt="invite-friend"
+                                class="img-fluid rounded-circle invite-profile-img">
+                            <div>
+                                <h6 class="fw-bold mb-0">Peter Davidson</h6>
+                                <p class="mb-0">peterdavidson@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="img/chat-profile/profile-6.jpg" alt="invite-friend"
+                                class="img-fluid rounded-circle invite-profile-img">
+                            <div>
+                                <h6 class="fw-bold mb-0">Wendy Davies</h6>
+                                <p class="mb-0">wendydavies@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Discount Modal -->
+    <div class="modal fade" id="discount" tabindex="-1" aria-labelledby="discountLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold mb-0" id="mycardsLabel">Discount</h5>
+                    <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+                </div>
+                <div class="modal-body">
+                    <div class="bg-light rounded-3 border border-2 border-secondary-subtle border-dashed text-center p-5 mb-4">
+                        <h5 class="fw-bold text-primary">HU8GB5</h5>
+                        <p class="text-secondary-emphasis mb-0">*Valid until XX Nov 202X</p>
+                    </div>
+                    <div class="bg-light rounded-3 border border-2 border-secondary-subtle border-dashed text-center p-5">
+                        <h5 class="fw-bold text-orange">AU9O65</h5>
+                        <p class="text-secondary-emphasis mb-0">*Valid until XX Sep 202X</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- location Modal -->
+    <div class="modal fade" id="location" tabindex="-1" aria-labelledby="locationLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold mb-0" id="locationLabel">Location</h5>
+                    <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9 rounded-4 overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.1269465912023!2d-0.1419615234658009!3d51.492537871809965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876056e7ae885d1%3A0xde4f20d34f011e36!2sDomino&#39;s%20Pizza%20-%20London%20-%20Victoria!5e0!3m2!1sen!2sin!4v1687005034446!5m2!1sen!2sin"
+                            class="border-0" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-primary btn-lg w-100" data-bs-dismiss="modal">Auto
+                        Select</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter offcanvas -->
+    <div class="offcanvas offcanvas-end border-light-subtle" tabindex="-1" id="filter" aria-labelledby="filterLabel">
+        <div class="offcanvas-header border-bottom border-light-subtle">
+            <h5 class="offcanvas-title fw-bold mb-0" id="filterLabel">
+                Search filters
+            </h5>
+            <a href="#" class="btn btn-light" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                    class="ri-close-fill"></i></a>
+        </div>
+        <div class="offcanvas-body">
+            <!-- sort by -->
+            <div class="mb-5">
+                <h5 class="fw-bold pb-2">Sort by</h5>
+                <div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                            checked />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Most popular
+                        </label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Delivery time
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                        <label class="form-check-label" for="flexRadioDefault3">
+                            Rating
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Price range -->
+            <div class="mb-5">
+                <h5 class="fw-bold pb-2">Price range</h5>
+                <div>
+                    <input type="range" class="form-range" min="0" max="5" id="pricerange" />
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="small text-seocndary-emphasis mb-0">$50</p>
+                        <p class="small text-seocndary-emphasis mb-0">$100</p>
+                        <p class="small text-seocndary-emphasis mb-0">$200</p>
+                        <p class="small text-seocndary-emphasis mb-0">$300</p>
+                        <p class="small text-seocndary-emphasis mb-0">$400</p>
+                        <p class="small text-seocndary-emphasis mb-0">$500</p>
+                    </div>
+                </div>
+            </div>
+            <!-- category -->
+            <div class="mb-4">
+                <h5 class="fw-bold pb-2">Category</h5>
+                <div class="d-flex flex-wrap align-items-start gap-3">
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" checked />
+                        <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck1">Burger</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" />
+                        <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck2">Drinks</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" />
+                        <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck3">Fries</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" />
+                        <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck4">Wraps</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" checked />
+                        <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck5">Pizza</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" checked />
+                        <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck6">Fries</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" />
+                        <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck7">Ice cream</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off" />
+                        <label class="btn btn-outline-primary btn-sm rounded-1" for="btncheck8">Desert</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- my cart offcanvas -->
+  <div class="offcanvas offcanvas-end border-light-subtle" tabindex="-1" id="cart" aria-labelledby="cartLabel">
+    <div class="offcanvas-header border-bottom border-light-subtle">
+      <h5 class="offcanvas-title fw-bold mb-0" id="cartLabel">
+        My cart
+        <span class="text-secondary-emphasis fw-normal fs-6">(2 items)</span>
+      </h5>
+      <a href="#" class="btn btn-light" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ri-close-fill"></i></a>
+    </div>
+    <div class="offcanvas-body">
+      <a href="#" class="link-dark" data-bs-toggle="modal" data-bs-target="#delivery-address">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <div>
+            <p class="text-uppercase text-orange small-sm mb-0">
+              Delivered To
+            </p>
+            <p class="text-dark fw-bold mb-0">
+              31 Narrow Lane, 2813 United States
+            </p>
+          </div>
+          <i class="ri-arrow-right-s-line ri-lg"></i>
+        </div>
+      </a>
+      <div class="mb-5">
+        <h5 class="fw-bold pb-2">Items</h5>
+        <div class="row align-items-center g-4 mb-3">
+          <div class="col-4">
+            <img src="img/dishes/dish-2.jpg" alt="cart-item" class="img-fluid rounded-3" />
+          </div>
+          <div class="col-1">
+            <p class="text-secondary-emphasis small-sm mb-0">1X</p>
+          </div>
+          <div class="col-5">
+            <h6 class="fw-bold mb-1">Cheeza Pizza</h6>
+            <p class="text-secondary-emphasis mb-0">$20</p>
+          </div>
+          <div class="col-2 text-end">
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"><i
+                class="ri-delete-bin-5-line"></i></a>
+          </div>
+        </div>
+        <div class="row align-items-center g-4 mb-3">
+          <div class="col-4">
+            <img src="img/dishes/dish-12.jpg" alt="cart-item" class="img-fluid rounded-3" />
+          </div>
+          <div class="col-1">
+            <p class="text-secondary-emphasis small-sm mb-0">1X</p>
+          </div>
+          <div class="col-5">
+            <h6 class="fw-bold mb-1">Pepperoni Pizza</h6>
+            <p class="text-secondary-emphasis mb-0">$25</p>
+          </div>
+          <div class="col-2 text-end">
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"><i
+                class="ri-delete-bin-5-line"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- delivery and promo code -->
+      <div>
+        <div class="row align-items-center mb-4">
+          <div class="col-4">
+            <div class="bg-warning-subtle rounded-3 d-flex align-items-center justify-content-center p-3">
+              <i class="ri-truck-fill ri-2x text-warning"></i>
+            </div>
+          </div>
+          <div class="col-5">
+            <h6 class="fw-bold mb-1">Delivery Fee</h6>
+            <p class="text-secondary-emphasis mb-0">Free</p>
+          </div>
+        </div>
+        <div class="row align-items-center mb-4">
+          <div class="col-4">
+            <div class="bg-light rounded-3 d-flex align-items-center justify-content-center p-3">
+              <i class="ri-coupon-2-fill ri-2x text-dark"></i>
+            </div>
+          </div>
+          <div class="col-5">
+            <h6 class="fw-bold mb-1">Promo code</h6>
+            <p class="text-secondary-emphasis mb-0">FGRW82</p>
+          </div>
+          <div class="col-3 text-end">
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#promocode"><i
+                class="ri-add-fill"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas-footer">
+      <a href="#" class="btn btn-primary btn-lg w-100" data-bs-toggle="offcanvas" data-bs-target="#checkout"
+        aria-controls="checkout">Checkout <span class="text-white-50 small">($40.00)</span></a>
+    </div>
+  </div>
+
+  <!-- checkout step 2 -->
+  <div class="offcanvas offcanvas-end border-light-subtle" tabindex="-1" id="checkout" aria-labelledby="checkoutLabel">
+    <div class="offcanvas-header border-bottom border-light-subtle">
+      <div class="d-flex align-items-center gap-2">
+        <a href="#" class="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#cart" aria-controls="cart"><i
+            class="ri-arrow-left-s-line"></i></a>
+        <h5 class="offcanvas-title fw-bold mb-0" id="checkoutLabel">Checkout</h5>
+      </div>
+      <a href="#" class="btn btn-light" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ri-close-fill"></i></a>
+    </div>
+    <div class="offcanvas-body">
+      <h5 class="fw-semibold">Payment Method</h5>
+      <div class="checkout-tabs mb-4">
+        <ul class="nav nav-pills justify-content-between gap-3" id="pills-tab" role="tablist">
+          <li class="nav-item col" role="presentation">
+            <button class="nav-link w-100 active" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+              type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+              <i class="ri-bank-card-2-line ri-2x"></i>
+            </button>
+          </li>
+          <li class="nav-item col" role="presentation">
+            <button class="nav-link w-100" id="pills-cod-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+              type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+              <i class="ri-money-dollar-box-line ri-2x"></i>
+            </button>
+          </li>
+          <li class="nav-item col" role="presentation">
+            <button class="nav-link w-100" id="pills-paypal-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+              type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+              <i class="ri-paypal-line ri-2x"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-card-tab"
+          tabindex="0">
+          <h6>My Cards (1)</h6>
+          <div class="d-flex gap-3">
+            <div class="col">
+              <a href="#" class="link-dark">
+                <div class="bg-light rounded-4 d-flex align-items-center justify-content-center h-100">
+                  <div><i class="ri-add-fill ri-3x"></i></div>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <img src="img/visa-card.webp" alt="my-card" class="img-fluid">
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-cod-tab" tabindex="0">
+          <div class="text-center mb-4">
+            <i class="ri-service-line text-success ri-10x"></i>
+            <h4 class="fw-bold">Pay when your product reached in your door steps</h4>
+          </div>
+          <a href="#" class="btn btn-primary btn-lg w-100" data-bs-dismiss="offcanvas" aria-label="Close">Cash on delivery</a>
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-paypal-tab" tabindex="0">
+          <div class="bg-light rounded-4 p-3">
+            <img src="img/paypal-code.png" alt="paypal" class="img-fluid rounded-4 shadow-sm">
+          </div>
+          <h4 class="text-center fw-bold pt-3">Scan to pay</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Item delete modal -->
+  <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content border-0 rounded-4 p-2">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold mb-0" id="delivery-addressLabel">
+            Delete
+          </h5>
+          <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <i class="ri-delete-bin-5-line ri-3x text-danger"></i>
+            <h5>Are you sure you want to delete this item?</h5>
+          </div>
+        </div>
+        <div class="modal-footer border-0 d-flex gap-2">
+          <button type="button" class="btn btn-secondary col" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger col" data-bs-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- delivery address modal -->
+  <div class="modal fade" id="delivery-address" tabindex="-1" aria-labelledby="delivery-addressLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 p-2">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold mb-0" id="delivery-addressLabel">
+            Delivery address
+          </h5>
+          <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3">
+            <div class="col-12">
+              <label for="InputStreet1" class="form-label form-label-sm text-uppercase small-sm fw-bold mb-0">Street
+                Name</label>
+              <input type="text"
+                class="form-control form-control-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                id="InputStreet1" value="31 Narrow Lane, 2813 United States" />
+            </div>
+            <div class="col-12">
+              <label for="InputCity2" class="form-label form-label-sm text-uppercase small-sm fw-bold mb-0">City</label>
+              <select class="form-select form-select-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                id="InputCity2">
+                <option selected>San Antonio</option>
+                <option value="1">Los Angeles</option>
+                <option value="2">Philadelphia</option>
+                <option value="3">Chicago</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="InputCity2"
+                class="form-label form-label-sm text-uppercase small-sm fw-bold mb-0">State</label>
+              <select class="form-select form-select-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                id="InputCity2">
+                <option selected>South Carolina</option>
+                <option value="1">Texas</option>
+                <option value="2">Hawai</option>
+                <option value="3">New jersey</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="InputZipcode4" class="form-label form-label-sm text-uppercase small-sm fw-bold mb-0">Zip
+                code</label>
+              <input type="number"
+                class="form-control form-control-sm bg-transparent border-0 rounded-0 border-bottom px-0"
+                id="InputZipcode4" value="48681" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-0">
+          <a class="btn btn-primary btn-lg w-100" data-bs-dismiss="modal">Confirm</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- promo code modal -->
+  <div class="modal fade" id="promocode" tabindex="-1" aria-labelledby="promocodeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content border-0 rounded-4 p-2">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold mb-0" id="promocodeLabel">
+            Enter promo code
+          </h5>
+          <a href="#" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></a>
+        </div>
+        <div class="modal-body py-1">
+          <input class="form-control bg-light border-0 rounded text-center py-2" type="text" value="FGRW82" />
+        </div>
+        <div class="modal-footer border-0">
+          <a class="btn btn-primary py-2 w-100" data-bs-dismiss="modal">Confirm</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Bootstrap Bundle Js -->
+    <script src="vender/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
